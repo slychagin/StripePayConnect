@@ -1,4 +1,4 @@
-# stripe-pay
+# StripePayConnect
 ### Connection of the Stripe payment system
 
 #### Deployed on Heroku:
@@ -14,15 +14,15 @@ The functionality of the site:
 - wait for the payment to be completed.
 - data for access to admin panel:
   login: admin
-  password: StripePay
+  password: admin777
 
 ## Web application at work:
 
 ### Payment process
-![]()
+![payment_process](https://github.com/slychagin/StripePayConnect/blob/master/demogifs/Buy.gif)
 
 ### Django Administration Panel
-![]()
+![admin_panel](https://github.com/slychagin/StripePayConnect/blob/master/demogifs/Admin%20panel.gif)
 
 
 ### Technologies:
@@ -31,13 +31,12 @@ The functionality of the site:
 - HTML, CSS, Bootstrap.
 
 ### You can run this project locally just do:
-- `git clone https://github.com/slychagin/stripe-pay.git`;
-- you must have Python 3 installed on your computer;
+- in command line `git clone https://github.com/slychagin/StripePayConnect.git`;
 - install all requirements from requirements.txt;
 - `python manage.py runserver`;
-- or go to https://
+- or test on https://
 
-### You can alsow pull Docker images:
+### You can also pull Docker images:
 - `docker pull serhio777/stripepay_web_run`;
 - `docker pull serhio777/stripepay_web_migrate`;
 - `docker pull serhio777/stripepay_web`.
