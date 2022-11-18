@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Buy {{ item.name }}</title>
+
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+
+    <!-- Bootstrap Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+            integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
+            integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
+            crossorigin="anonymous"></script>
+
+    <script src="https://js.stripe.com/v3/"></script>
+
+</head>
+
+<body>
+
+<div class="text-center">
+    <br>
+    <h1>{{ item.name }}</h1>
+    <p>{{ item.description }}</p>
+    <p style="font-size:160%;">${{ item.get_display_price }}</p>
+    <button id="checkout-button" type="button" class="btn btn-primary btn-lg" style="width:150px;">Buy!</button>
+
+</div>
+{% csrf_token %}
+</body>
+
+<script>
+    const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+    const stripe = Stripe("{{ STRIPE_PUBLIC_KEY }}");
+    const checkoutButton = document.getElementById('checkout-button');
+
+
+    checkoutButton.addEventListener("click", function () {
+        fetch("{% url 'create-checkout-session' item.id %}", {
+          method: "POST",
+          headers: {
+              'X-CSRFToken': csrftoken
+          }
+        })
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (session) {
+          return stripe.redirectToCheckout({ sessionId: session.id });
+        })
+        .then(function (result) {
+          if (result.error) {
+            alert(result.error.message);
+          }
+        })
+        .catch(function (error) {
+          console.error("Error:", error);
+        });
+    });
+
+</script>
+
+</html>
