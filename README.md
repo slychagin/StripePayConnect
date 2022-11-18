@@ -13,8 +13,8 @@ The functionality of the site:
 - enter test card number 4242 4242 4242 4242, validity - 01/30, CVC - 123;
 - wait for the payment to be completed.
 - data for access to admin panel:
-  login: admin
-  password: admin777
+  - login: admin
+  - password: admin777
 
 ## Web application at work:
 
