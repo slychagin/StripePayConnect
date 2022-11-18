@@ -33,8 +33,8 @@ def create_checkout_session(request, **kwargs):
             'quantity': 1,
         }],
         mode='payment',
-        success_url='https://stripe-pay-777.herokuapp.com/success/',
-        cancel_url='https://stripe-pay-777.herokuapp.com/cancel/',
+        success_url='http://127.0.0.1:8000/success/',
+        cancel_url='http://127.0.0.1:8000/cancel/',
     )
     return JsonResponse({
         'id': session.id
