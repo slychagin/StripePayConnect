@@ -2,7 +2,7 @@
 ### Connection of the Stripe payment system
 
 #### Deployed on Heroku:
-https://
+https://stripe-pay-connect.herokuapp.com/
 
 Backend implemented in Django.
 
@@ -34,9 +34,4 @@ The functionality of the site:
 - in command line `git clone https://github.com/slychagin/StripePayConnect.git`;
 - install all requirements from requirements.txt;
 - `python manage.py runserver`;
-- or test on https://
-
-### You can also pull Docker images:
-- `docker pull serhio777/stripepay_web_run`;
-- `docker pull serhio777/stripepay_web_migrate`;
-- `docker pull serhio777/stripepay_web`.
+- or test on https://stripe-pay-connect.herokuapp.com/
