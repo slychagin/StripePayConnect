@@ -30,5 +30,4 @@ The functionality of the site:
 ### You can run this project locally just do:
 - in command line `git clone https://github.com/slychagin/StripePayConnect.git`;
 - install all requirements from requirements.txt;
-- `python manage.py runserver`;
-- or test on https://stripe-pay-connect.herokuapp.com/
+- `python manage.py runserver`.
