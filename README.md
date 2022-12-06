@@ -1,9 +1,6 @@
 # StripePayConnect
 ### Connection of the Stripe payment system
 
-#### Deployed on Heroku:
-https://stripe-pay-connect.herokuapp.com/
-
 Backend implemented in Django.
 
 The functionality of the site:
